@@ -1,0 +1,35 @@
+{
+	"manifest_version": 3,
+	"name": "Link Blocker",
+	"description": "Block links on any website by domain.",
+	"author": "Nicolas Micaux",
+	"version": "1.0",
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"injected.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [
+    	"storage",
+		"activeTab"
+	],
+	"options_page": "options.html",
+	"background": {
+		"service_worker": "background.js"
+	},
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+		"128": "icon128.png"
+		}
+	},
+	"icons": {
+		"128": "icon128.png"
+	}
+}
